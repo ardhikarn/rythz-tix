@@ -28,6 +28,6 @@ class HomeController extends Controller
 
     public function tes()
     {
-        echo 'ini adalah tes';
+        return view('home');
     }
 }
