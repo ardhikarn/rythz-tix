@@ -12,24 +12,29 @@
     </div>
 
     <div class="card-body p-0">
-      <table class="table">
-        <tr>
-          <th>#</th>
-          <th>Nama</th>
-          <th>Email</th>
-          <th>Registered</th>
-          <th>Edited</th>
-        </tr>
-        @foreach ($users as $user)
+      <table class="table table-striped table-borderless table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Registered</th>
+            <th>Edited</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach ($users as $user)
             <tr>
-              <td>{{ $user->id }}</td>
+              <td>{{ ($users->currentPage() - 1) * ($users->perPage()) + $loop->iteration }}</td>
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
               <td>{{ $user->created_at }}</td>
               <td>{{ $user->updated_at }}</td>
             </tr>
-        @endforeach
+          @endforeach
+        </tbody>
       </table>
+      {{ $users->links() }}
     </div>
   </div>
 
