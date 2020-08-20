@@ -73,7 +73,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        //USER ini adalah model
+        $user = USER::find($id);
+        $active = 'Users';
+        return view('dashboard/user/form', ['user' => $user, 'active' => $active]);
     }
 
     /**
