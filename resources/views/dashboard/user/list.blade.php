@@ -10,9 +10,9 @@
         <div class="col-4">
           <form method="GET" action="{{ url('dashboard/users') }}">
             <div class="input-group">
-              <input type="text" class="form-control" name="q" value="{{ $request['q'] ?? '' }}">
+              <input placeholder="search" type="text" class="form-control" name="q" value="{{ $request['q'] ?? '' }}">
               <div class="input-group-append">
-                <button type="submit" class="btn btn-secondary btn-sm">Search</button>
+                <button type="submit" class="btn btn-secondary btn-sm px-3"><i class="fas fa-search"></i></button>
               </div>
             </div>
           </form>
@@ -40,7 +40,7 @@
               <td>{{ $user->email }}</td>
               <td>{{ $user->created_at }}</td>
               <td>{{ $user->updated_at }}</td>
-              <td> <a href="{{ url('dashboard/user/edit/'.$user->id) }}" class="btn btn-sm btn-success">Edit</a></td>
+              <td> <a href="{{ url('dashboard/user/edit/'.$user->id) }}" title="Edit" class="btn btn-sm btn-success"><i class="fas fa-edit"></i></a></td>
             </tr>
           @endforeach
         </tbody>
