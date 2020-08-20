@@ -43,7 +43,7 @@
           @endforeach
         </tbody>
       </table>
-      {{ $users->links() }}
+      {{ $users->appends($request)->links() }}
     </div>
   </div>
 
