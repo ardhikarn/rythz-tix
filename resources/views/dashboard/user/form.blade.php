@@ -7,8 +7,8 @@
         <div class="col-8">
           <h3>Users</h3>
         </div>
-        <div class="col-4">
-          
+        <div class="col-4 text-right">
+          <button class="btn btn-sm text-secondary" data-toggle="modal" data-target="#deleteModal">Delete</button>
         </div>
       </div>
     </div>
@@ -18,6 +18,7 @@
         <div class="col-md-8 offset-md-2">
           <form action="{{ url('dashboard/user/update/'.$user->id) }}" method="post">
             @csrf
+            @method('put')
             <div class="form-group">
               <label for="name">Nama</label>
               <input type="text" class="form-control" name="name" value="{{ $user->name }}">
@@ -41,4 +42,26 @@
     </div>
   </div>
 
+  {{-- modal --}}
+  <div class="modal fade" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Delete</h5>
+        </div>
+        
+        <div class="modal-body">
+          <p>Hapus User {{ $user->name }} ?</p>
+        </div>
+
+        <div class="modal-footer">
+          <form action="{{ url('dashboard/user/delete/'.$user->id) }}" method="post">
+            @csrf
+            @method('delete')
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
