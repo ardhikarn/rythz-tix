@@ -49,6 +49,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5>Delete</h5>
+          <button class="close" type="button" data-dismiss="modal">&times;</button>
         </div>
         
         <div class="modal-body">
