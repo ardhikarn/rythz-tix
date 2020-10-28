@@ -8,7 +8,7 @@
           <h3>Users</h3>
         </div>
         <div class="col-4">
-          <form method="GET" action="{{ url('dashboard/users') }}">
+          <form method="GET" action="{{ route('dashboard.users') }}">
             <div class="input-group">
               <input placeholder="search" type="text" class="form-control" name="q" value="{{ $request['q'] ?? '' }}">
               <div class="input-group-append">
