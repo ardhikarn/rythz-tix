@@ -40,7 +40,7 @@
               <td>{{ $user->email }}</td>
               <td>{{ $user->created_at }}</td>
               <td>{{ $user->updated_at }}</td>
-              <td> <a href="{{ url('dashboard/user/edit/'.$user->id) }}" title="Edit" class="btn btn-sm btn-success"><i class="fas fa-edit"></i></a></td>
+              <td> <a href="{{ route('dashboard.user.edit', ['id' => $user->id]) }}" title="Edit" class="btn btn-sm btn-success"><i class="fas fa-edit"></i></a></td>
             </tr>
           @endforeach
         </tbody>
