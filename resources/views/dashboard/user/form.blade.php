@@ -57,7 +57,7 @@
         </div>
 
         <div class="modal-footer">
-          <form action="{{ url('dashboard.users.delete', ['id' => $user->id]) }}" method="post">
+          <form action="{{ route('dashboard.users.delete', ['id' => $user->id]) }}" method="post">
             @csrf
             @method('delete')
             <button class="btn btn-sm btn-danger">Delete  <i class="fas fa-trash"></i></button>
